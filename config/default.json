@@ -1,0 +1,3 @@
+{
+    "mongoURI":"mongodb+srv://Archie:Archie@connector.fh7pd.mongodb.net/MERN?retryWrites=true&w=majority"
+}
