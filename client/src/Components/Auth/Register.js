@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { setAlert } from '../../Redux/Actions/alert';
+import Alert from '../Layout/Alert';
 // import axios from 'axios';
 
 const Register = () => {
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,7 +22,8 @@ const Register = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (password !== password2) console.error('not');
+    if (password !== password2)
+      dispatch(setAlert('Passwords do not match', 'danger'));
     else {
       /* w/o redux
       const newUser = {
@@ -42,13 +47,13 @@ const Register = () => {
         console.error(err.response.data);
       }
       */
-
       console.log(formData);
     }
   };
 
   return (
     <section className="container">
+      <Alert />
       <h1 className="large text-primary">Sign Up</h1>
       <p className="lead">
         <i className="fas fa-user"></i> Create Your Account
