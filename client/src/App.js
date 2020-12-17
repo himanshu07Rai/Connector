@@ -8,6 +8,13 @@ import Login from './Components/Auth/Login';
 import setAuthToken from './Utils/setAuthToken';
 import { loadUser } from './Redux/Actions/auth';
 import store from './Redux/store';
+import Dashboard from './Components/Dashboard/Dashboard';
+import PrivateRoute from './Components/Routing/PrivateRoute';
+import CreateProfile from './Components/Profile-Form/CreateProfile';
+import EditProfile from './Components/Profile-Form/EditProfile';
+import { getCurrentProfile } from './Redux/Actions/profile';
+import AddExperience from './Components/Profile-Form/AddExperience';
+import AddEducation from './Components/Profile-Form/AddEducation';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -16,6 +23,7 @@ if (localStorage.token) {
 const App = () => {
   useEffect(() => {
     store.dispatch(loadUser()); //getting authenticated user everytime the aapp loads
+    store.dispatch(getCurrentProfile());
   }, []);
 
   return (
@@ -26,6 +34,19 @@ const App = () => {
         <Switch>
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute
+            exact
+            path="/create-profile"
+            component={CreateProfile}
+          />
+          <PrivateRoute exact path="/edit-profile" component={EditProfile} />
+          <PrivateRoute
+            exact
+            path="/add-experience"
+            component={AddExperience}
+          />
+          <PrivateRoute exact path="/add-education" component={AddEducation} />
         </Switch>
       </Router>
     </>
