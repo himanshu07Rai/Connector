@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Moment from 'react-moment';
 import { deleteEducation } from '../../Redux/Actions/profile';
 

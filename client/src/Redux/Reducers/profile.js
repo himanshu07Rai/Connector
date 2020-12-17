@@ -2,7 +2,9 @@ import {
   GET_PROFILE,
   PROFILE_ERROR,
   CLEAR_PROFILE,
-  UPDATE_PROFILE
+  UPDATE_PROFILE,
+  GET_PROFILES,
+  GET_REPOS
 } from '../types';
 
 const initialState = {
@@ -23,7 +25,19 @@ const func = (state = initialState, { type, payload }) => {
         error: {},
         loading: false
       };
-
+    case GET_PROFILES:
+      return {
+        ...state,
+        profiles: payload,
+        error: {},
+        loading: false
+      };
+    case GET_REPOS:
+      return {
+        ...state,
+        repos: payload,
+        loadinf: false
+      };
     case PROFILE_ERROR:
       return {
         ...state,
@@ -39,6 +53,7 @@ const func = (state = initialState, { type, payload }) => {
         loading: true,
         error: {}
       };
+
     default:
       return state;
   }

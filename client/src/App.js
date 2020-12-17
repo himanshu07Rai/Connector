@@ -15,6 +15,7 @@ import EditProfile from './Components/Profile-Form/EditProfile';
 import { getCurrentProfile } from './Redux/Actions/profile';
 import AddExperience from './Components/Profile-Form/AddExperience';
 import AddEducation from './Components/Profile-Form/AddEducation';
+import Profiles from './Components/Profiles/Profiles';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -34,6 +35,7 @@ const App = () => {
         <Switch>
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/profiles" component={Profiles} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute
             exact
