@@ -36,7 +36,7 @@ const func = (state = initialState, { type, payload }) => {
       return {
         ...state,
         repos: payload,
-        loadinf: false
+        loading: false
       };
     case PROFILE_ERROR:
       return {

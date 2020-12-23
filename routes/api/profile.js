@@ -59,17 +59,18 @@ router.post(
       linkedin,
       status,
       facebook,
-      // spread the rest of the fields we don't need to check
-      ...rest
+      bio,
+      location
     } = req.body;
 
     const profileFields = {};
     profileFields.user = req.user.id;
     if (company) profileFields.company = company;
     if (website) profileFields.website = website;
-    //   if(bio)
-    //     profileFields.company = bio;
+    if (bio) profileFields.bio = bio;
     if (status) profileFields.status = status;
+    if (location) profileFields.location = location;
+
     if (skills) {
       profileFields.skills = skills.split(',').map((skill) => skill.trim());
     }
