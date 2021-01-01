@@ -1,26 +1,26 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { createProfile, getCurrentProfile } from '../../Redux/Actions/profile';
-import Alert from '../Layout/Alert';
+import React, { Fragment, useState, useEffect } from "react";
+import { Link, withRouter } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { createProfile, getCurrentProfile } from "../../Redux/Actions/profile";
+import Alert from "../Layout/Alert";
 
 const EditProfile = (props) => {
   const dispatch = useDispatch();
   const Profile = useSelector((state) => state.profile);
   const { profile, loading } = Profile;
   const [formData, setformData] = useState({
-    company: '',
-    website: '',
-    location: '',
-    status: '',
-    skills: '',
-    githubusername: '',
-    bio: '',
-    twitter: '',
-    facebook: '',
-    linkedin: '',
-    youtube: '',
-    instagram: ''
+    company: "",
+    website: "",
+    location: "",
+    status: "",
+    skills: "",
+    githubusername: "",
+    bio: "",
+    twitter: "",
+    facebook: "",
+    linkedin: "",
+    youtube: "",
+    instagram: "",
   });
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
@@ -28,19 +28,19 @@ const EditProfile = (props) => {
   useEffect(() => {
     getCurrentProfile();
     setformData({
-      company: loading || !profile.company ? '' : profile.company,
-      website: loading || !profile.website ? '' : profile.website,
-      location: loading || !profile.location ? '' : profile.location,
-      status: loading || !profile.status ? '' : profile.status,
-      skills: loading || !profile.skills ? '' : profile.skills.join(','),
+      company: loading || !profile.company ? "" : profile.company,
+      website: loading || !profile.website ? "" : profile.website,
+      location: loading || !profile.location ? "" : profile.location,
+      status: loading || !profile.status ? "" : profile.status,
+      skills: loading || !profile.skills ? "" : profile.skills.join(","),
       githubusername:
-        loading || !profile.githubusername ? '' : profile.githubusername,
-      bio: loading || !profile.bio ? '' : profile.bio,
-      twitter: loading || !profile.social ? '' : profile.social.twitter,
-      facebook: loading || !profile.social ? '' : profile.social.facebook,
-      linkedin: loading || !profile.social ? '' : profile.social.linkedin,
-      youtube: loading || !profile.social ? '' : profile.social.twitter,
-      instagram: loading || !profile.social ? '' : profile.social.twitter
+        loading || !profile.githubusername ? "" : profile.githubusername,
+      bio: loading || !profile.bio ? "" : profile.bio,
+      twitter: loading || !profile.social ? "" : profile.social.twitter,
+      facebook: loading || !profile.social ? "" : profile.social.facebook,
+      linkedin: loading || !profile.social ? "" : profile.social.linkedin,
+      youtube: loading || !profile.social ? "" : profile.social.twitter,
+      instagram: loading || !profile.social ? "" : profile.social.twitter,
     });
   }, [loading, getCurrentProfile]);
 
@@ -56,7 +56,7 @@ const EditProfile = (props) => {
     facebook,
     linkedin,
     youtube,
-    instagram
+    instagram,
   } = formData;
 
   const onChange = (e) => {

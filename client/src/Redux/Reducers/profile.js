@@ -4,15 +4,15 @@ import {
   CLEAR_PROFILE,
   UPDATE_PROFILE,
   GET_PROFILES,
-  GET_REPOS
-} from '../types';
+  GET_REPOS,
+} from "../types";
 
 const initialState = {
   profile: null,
   profiles: [],
   repos: [],
   loading: true,
-  error: {}
+  error: {},
 };
 
 const func = (state = initialState, { type, payload }) => {
@@ -23,26 +23,27 @@ const func = (state = initialState, { type, payload }) => {
         ...state,
         profile: payload,
         error: {},
-        loading: false
+        loading: false,
       };
     case GET_PROFILES:
       return {
         ...state,
         profiles: payload,
         error: {},
-        loading: false
+        loading: false,
       };
     case GET_REPOS:
       return {
         ...state,
         repos: payload,
-        loading: false
+        loading: false,
       };
     case PROFILE_ERROR:
       return {
         ...state,
         error: payload,
-        loading: false
+        loading: false,
+        profile: null,
       };
     case CLEAR_PROFILE:
       return {
@@ -51,7 +52,7 @@ const func = (state = initialState, { type, payload }) => {
         profiles: [],
         repos: [],
         loading: true,
-        error: {}
+        error: {},
       };
 
     default:
