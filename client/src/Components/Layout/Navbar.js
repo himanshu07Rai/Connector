@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../../Redux/Actions/auth';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../Redux/Actions/auth";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -18,14 +18,17 @@ const Navbar = () => {
         <Link to="/profiles">Developers</Link>
       </li>
       <li>
+        <Link to="/posts">Posts</Link>
+      </li>
+      <li>
         <Link to="/dashboard">
-          <i className="fas fa-user"></i>{' '}
+          <i className="fas fa-user"></i>{" "}
           <span className="hide-sm">Dashboard</span>
         </Link>
       </li>
       <li>
         <a href="#!" onClick={(e) => logOut(e)}>
-          <i className="fas fa-sign-out-alt"></i>{' '}
+          <i className="fas fa-sign-out-alt"></i>{" "}
           <span className="hide-sm">Logout</span>
         </a>
       </li>
