@@ -17,10 +17,11 @@
       For example, an action with the type "LOGIN_SUCCESS" might change a property of Redux state called isAuthenticated from false to true.
  
 #### Action Creators : 
-              1.Can dispatch actions asynchronously 
-              2.A function which dispatches a normal action
-              3.Allows for dynamically setting the payload
+              1.Action creators are the functions that encapsulate the process of creation of an action object.
+              2.These functions simply return a plain Js object which is an action.
+              3.Action creator function dispatches an action to the store
               4.No change required to reducer
+      By using actions and action creators, we've given ourselves a consistent way to describe the different behaviors our users can take for our application.
              
 #### Reducers : 
               1.Reducers are a pure function in Redux.
