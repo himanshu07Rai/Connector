@@ -1,5 +1,4 @@
 const express = require("express");
-const config = require("config");
 const router = express.Router();
 const auth = require("../../Middleware/auth");
 const Profile = require("../../Models/Profile");

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from "./Components/Layout/Landing";
 import Navbar from "./Components/Layout/Navbar";
 import Register from "./Components/Auth/Register";

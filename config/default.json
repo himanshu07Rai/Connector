@@ -1,6 +1,0 @@
-{
-    "mongoURI":"mongodb+srv://Archie:Archie@connector.fh7pd.mongodb.net/MERN?retryWrites=true&w=majority",
-    "jwtToken" : "secretToken",
-    "githubClientID":"3ce77e289364d6ce249c",
-    "githubSecret":"43c17d51fe38a04f2b1219b119fcdcfcfb1d92ce"
-}

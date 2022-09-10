@@ -1,6 +1,6 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import React from "react";
+import { useSelector } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
 const Landing = () => {
   const isAuth = useSelector((state) => state.auth.isAuthenticated);
   if (isAuth) {
@@ -16,12 +16,12 @@ const Landing = () => {
             other developers
           </p>
           <div className="buttons">
-            <a href="register.html" className="btn btn-primary">
-              Sign Up
-            </a>
-            <a href="login.html" className="btn btn-light">
+            <Link to="/login" className="btn btn-danger">
               Login
-            </a>
+            </Link>
+            <Link to="/register" className="btn btn-primary">
+              Register
+            </Link>
           </div>
         </div>
       </div>
